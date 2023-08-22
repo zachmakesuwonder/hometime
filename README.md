@@ -1,24 +1,41 @@
-# README
+##### Prerequisites
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The setups steps expect following tools installed on the system.
 
-Things you may want to cover:
+- Github
+- Use [RVM](https://rvm.io/rvm/install) or [RBENV](https://github.com/rbenv/rbenv) to install multiple ruby versions
+- Ruby [2.7.7p221]
+- Rails [7.0.7]
 
-* Ruby version
+##### 1. Check out the repository
 
-* System dependencies
+```bash
+git clone git@github.com:zachmakesuwonder/hometime.git
+```
 
-* Configuration
+##### 2. Create and setup the database
 
-* Database creation
+Run the following commands to create and setup the database.
 
-* Database initialization
+```ruby
+bundle exec rake db:create
+bundle exec rake db:setup
+```
 
-* How to run the test suite
+##### 3. Start the Rails server
 
-* Services (job queues, cache servers, search engines, etc.)
+You can start the rails server using the command given below.
 
-* Deployment instructions
+```ruby
+bundle exec rails s
+```
 
-* ...
+And now you can visit the site with the URL http://localhost:3000/api/v1/reservations
+
+##### 4. Running the test
+
+To run all test
+
+```ruby
+rspec
+```
