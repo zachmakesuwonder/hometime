@@ -6,13 +6,13 @@ class ReservationAdapter < ApplicationService
   end
 
   def call
-    @payload = if @payload["reservation_code"].present? 
-                ReservationManager::AirbnbAdapter.new(@payload.except(:reservation))
-              elsif @payload["reservation"].present?
-                ReservationManager::BookingAdapter.new(@payload)
-              else
-                self
-              end
+    if @payload["reservation_code"].present?
+      ReservationManager::AirbnbAdapter.new(@payload.except(:reservation))
+    elsif @payload["reservation"].present?
+      ReservationManager::BookingAdapter.new(@payload)
+    else
+      self
+    end
   end
 
   def code

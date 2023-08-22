@@ -1,5 +1,5 @@
 module ReservationManager
-  class BookingAdapter < ReservationAdapter
+  class BookingAdapter
     attr_accessor :payload
     
     def initialize(payload)

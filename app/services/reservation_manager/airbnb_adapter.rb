@@ -1,7 +1,7 @@
 module ReservationManager
-  class AirbnbAdapter < ReservationAdapter
+  class AirbnbAdapter
     attr_accessor :payload
-    
+
     def initialize(payload)
       @payload = payload
     end
