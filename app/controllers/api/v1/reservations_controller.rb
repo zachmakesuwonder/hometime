@@ -1,6 +1,7 @@
 class Api::V1::ReservationsController < ApplicationController
   def reserve
-    @reservation = ReservationManager::ReservationConstructor.new(params)
+    payload = ReservationAdapter.call(params)
+    @reservation = ReservationManager::ReservationConstructor.new(payload: payload, code: payload.code, email: payload.email)
     if @reservation.reserve!
       render json: @reservation.payload
     else
