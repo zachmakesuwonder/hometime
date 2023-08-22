@@ -18,10 +18,6 @@ module ReservationManager
         @reservation.save
       end
     end
-
-    def payload
-      @reservation.payload # design universal payload structure
-    end
   end
 end
 

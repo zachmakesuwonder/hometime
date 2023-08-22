@@ -6,10 +6,6 @@ module ReservationManager
       @payload = payload
     end
 
-    def call
-      @payload
-    end
-
     def code
       @payload["reservation_code"] if @payload["reservation_code"].present?
     end
